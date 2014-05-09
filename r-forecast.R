@@ -1,5 +1,7 @@
 install.packages("forecast")
 library("forecast")
+# data from - http://future.aae.wisc.edu/data/monthly_values/by_area/317?area=US&gtype=bar&yoy=true
+# cleaned up and stored as .csv
 icecream = read.csv("D:\\Projects\\tlc\\Data\\icecream-sales.csv")
 icecream
 
