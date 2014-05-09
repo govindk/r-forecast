@@ -24,9 +24,9 @@ icecream.fs$method
 plot(icecream.fs)
 
 # you like HoltWinters?
-fit_h = HoltWinters(icecream.ts,beta=FALSE, gamma=FALSE)
-forecast(fit_h, 3)
-plot(forecast(fit_h, 3))
+fit_h = HoltWinters(icecream.ts)
+forecast(fit_h, 12)
+plot(forecast(fit_h, 12))
 
 # hindsight
 l = lag(icecream.ts, 12)
@@ -46,3 +46,10 @@ plot(forecast(fit_auto, 12))
 fit_exp = ets(icecream.ts)
 
 plot(forecast(fit_exp, 12))
+
+# bats  ? 
+fit_bats = bats(icecream.ts)
+
+plot(forecast(fit_bats, 12))
+
+taylor.fit =
