@@ -14,6 +14,7 @@ monthplot(icecream.ts)
 seasonplot(icecream.ts)
 
 plot (icecream.ts)
+# and just like that
 icecream.fs = forecast(icecream.ts)
 
 icecream.fs
