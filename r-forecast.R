@@ -3,7 +3,21 @@ library("forecast")
 # data from - http://future.aae.wisc.edu/data/monthly_values/by_area/317?area=US&gtype=bar&yoy=true
 # cleaned up and stored as .csv
 icecream = read.csv("D:\\Projects\\tlc\\Data\\icecream-sales.csv")
-icecream
+head(icecream)
+
+# how does data look
+summary(icecream)
+boxplot(icecream)
+barplot(icecream$sales)
+means = aggregate(icecream$sales, by=list(icecream$sales), FUN=mean) 
+barplot(means$x, names.arg=means$Group.1) 
+# most informative gives you the spread
+hist(icecream$sales)
+rug(jitter(icecream$sales)) 
+lines(density(icecream$sales), col="blue", lwd=1) 
+
+
+
 
 # very easy in r to create time series with own frequency
 icecream.ts = ts(icecream,frequency=12,start=c(2008,1))
@@ -52,4 +66,3 @@ fit_bats = bats(icecream.ts)
 
 plot(forecast(fit_bats, 12))
 
-taylor.fit =
